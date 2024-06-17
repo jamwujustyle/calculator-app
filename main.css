@@ -1,0 +1,453 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 50px;
+    background-color: #cfc7c7;
+}
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.left {
+    position: left;
+    align-items: center;
+    display: flex;
+}
+h1 {
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.calculators {
+    display: flex;
+    align-content: center;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    font-size: 16px;
+    justify-content: center;
+    width: 100%;
+}
+
+.bmi, .simple, .percentage, .speed, .weight, .temperature {
+    display: fixed;
+    font-size: 16px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 18px;
+    width: 200px;
+    height: 100px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.bmi:hover, .simple:hover, .percentage:hover, .speed:hover, .weight:hover, .temperature:hover {
+    background-color: #d3d3d3; /* Changes background color to grey on hover */
+}
+
+/* SIMPLE CALCULATOR */
+.simple-calculator {
+    width: 300px;
+    border: 8px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.display {
+    height: 60px;
+    font-size: 24px;
+    text-align: right;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 5px;
+}
+button {
+    height: 80px;
+    width: 70px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #d3d3d3;
+}
+
+/* BMI CALCULATOR */
+
+:root {
+    --background-color: #A3A3A3;
+    --vigo-color: #f09831;
+    --slider-color: #A3A3A3;
+    --input-number-color: #EBEBEB;
+  }
+
+
+.bmi-calculator {
+    border: 5px solid white;
+    -moz-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+    -webkit-box-shadow: 0px 0px 5px hsl(15, 2%, 55%);
+    box-shadow: 0px 0px 10px hsl(0%, 0%, 73.9%);
+    padding: 2em;
+    margin: 0em;
+    background-color: white;
+}
+.bmi-calculator-weight, .bmi-calculator-height {
+    margin-bottom: 1em;
+    width: 100%;
+}
+.weight-slider, .height-slider {
+    width: 100%;
+    height: 1px;
+    border-radius: 10px;
+    background: var(--slider-color);
+    outline: none;
+}
+input[type=range] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+    margin-top: 0px;
+}
+input[type=range]::-moz-range-thumb {
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+}
+input[type=range]::-ms-thumb {
+    border: 2.5px solid var(--vigo-color);
+    height: 20px;
+    width: 20px;
+    border-radius: 40px;
+    background: white;
+    cursor: pointer;
+}
+input[type=number] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: var(--input-number-color);
+    border-style: none;
+    height: 30px;
+    width: 60px;
+    margin-left: 20px;
+    margin-right: 10px;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
+input[type=number]:focus {
+    outline: none;
+}
+.gumb {
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 11px 32px;
+    border: none;
+    background-color: var(--vigo-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.gumb:hover {
+    color: red;
+}
+h2 {
+    font-size: 1.5em;
+  }
+
+#evaluationMessage {
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* PERCENTAGE CALCULATOR */
+.percentage-calculator {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.part {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #a98ee3;
+}
+.part2 {
+    background-color: blue
+}
+.part3 {
+    background-color: pink
+}
+.part4 {
+    background-color: lightseagreen
+}
+.part1, .part2, .part3, .part4 {
+    margin: 0px;
+    font-size: 18px;
+} 
+
+span, input {
+    margin: 0 5px;
+}
+
+input[type="number"] {
+    font-size: 12px; 
+}
+p {
+    margin: 0;
+    display: flex;
+    width: 100%
+}
+
+
+.equal {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+}
+.right {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Speed conversion */
+.speed-conversion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.speed-conversion h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100px;
+}
+
+.btnSpeed {
+    padding: 10px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    min-width: 150px; 
+}
+
+.bmi-calculator.hidden,
+.percentage-calculator.hidden,
+.speed-conversion.hidden,
+.weight-conversion.hidden,
+.temperature-conversion.hidden {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
+.speed-conversion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.speed-conversion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btnSpeed {
+    padding: 10px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    min-width: 150px;
+    margin-top: 20px
+}
+
+.inputs-mph, .inputs-kph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inputs-mph input, .inputs-kph input {
+    width: 350px;
+    height: 120px;
+    border: 4px solid black;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.inputs-mph label, .inputs-kph label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+}
+
+.equals {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*  weight Conversion */
+
+.measurements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.kilograms, .pounds, .ounces, .stones { 
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#kg, #lb, #oz, #st {
+    border-radius: 4px;
+    width: 80px;
+    text-align: center; 
+}
+
+.kilograms p, .pounds p, .ounces p, .stones p {
+    font-size: 20px;
+    justify-content: center;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* Temperature conversion */
+
+
+.temperature-conversion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.temperature-conversion h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.temperature-conversion .button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.temperature-conversion .btnTemp {
+    padding: 10px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    min-width: 150px;
+}
+
+.inputs-celcius,
+.inputs-fahrenheit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inputs-celcius input,
+.inputs-fahrenheit input {
+    width: 350px;
+    height: 120px;
+    border: 4px solid black;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.inputs-celcius label,
+.inputs-fahrenheit label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: #333;
+}
+.input-celcius, .input-fahrenheit, .hidden {
+    display: none;
+}

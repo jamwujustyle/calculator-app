@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="Calculator_512.webp">
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <img src="Calculator_512.webp" alt="Corner image" width="80">
+            <h1>Online Calculator</h1>
+        </div> 
+    </div>
+    <hr>
+    <div class="calculators">
+        <button class="simple"> 
+            <img src="simple.png" alt="simple calculator" width="50">
+            Simple Calculator
+        </button>
+        <button class="bmi">
+            <img src="bmi.png" alt="bmi calculator" width="50">
+            BMI Calculator
+        </button>
+        <button class="percentage">
+            <img src="percentage.png" alt="percentage calculator" width="50">
+            Percentage Calculator
+        </button>
+        <button class="speed">
+            <img src="speed.png" alt="speed conversion" width="50">
+            Speed Conversion
+        </button>
+        <button class="weight">
+            <img src="weight.png" alt="weight conversion" width="50">
+            Weight Conversion
+        </button>
+        <button class="temperature">
+            <img src="temprature.png" alt="temperature conversion" width="50">
+            Temperature Conversion
+        </button>
+    </div>
+
+    <div class="simple-calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+            <button id="open-paren">(</button>
+            <button id="close-paren">)</button>
+            <button id="ce">CE</button>
+            <button id="c">C</button>
+            <button id="7">7</button>
+            <button id="8">8</button>
+            <button id="9">9</button>
+            <button id="divide">/</button>
+            <button id="4">4</button>
+            <button id="5">5</button>
+            <button id="6">6</button>
+            <button id="multiply">*</button>
+            <button id="1">1</button>
+            <button id="2">2</button>
+            <button id="3">3</button>
+            <button id="subtract">-</button>
+            <button id="0">0</button>
+            <button id="period">.</button>
+            <button id="equal">=</button>
+            <button id="add">+</button>
+        </div>
+    </div>
+
+    <div class="bmi-calculator hidden">
+        <form name="bmiForm">
+            <div class="bmi-calculator">
+                <h2 style="margin-bottom: 1em;">Calculate your BMI</h2>
+                <div class="bmi-calculator-weight">
+                    <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60">
+                    <p style="margin-top: 1.8em;">
+                        WEIGHT:
+                        <input name="Teza" id="inputWeight" type="number" value="60" min="25" max="180" step="1" oninput="ShowValWeight(this.value)">
+                        <span id="weight"></span> kg
+                    </p>
+                </div>
+                <div class="bmi-calculator-height">
+                    <input class="height-slider" name="realheight" id="myHeight" type="range" min="100" max="220" step="1" value="160">
+                    <p style="margin-top: 1.8em;">
+                        HEIGHT:
+                        <input name="Visina" id="inputHeight" type="number" value="160" min="100" max="220" oninput="showValHeight(this.value)">
+                        <span id="height"></span> cm
+                    </p>
+                </div>
+                <input class="gumb" type="button" value="Calculate" style="margin-top: 0.5em;">
+                <p style="margin-top: 1em; font-size: 1.2em;">
+                    <strong>YOUR BMI:</strong>
+                    <span id="yourbmi" style="font-size: 1.2em; margin-left: 8px;"></span>
+                </p>
+                <p></p>
+                <p>
+                    <span id="evaluationMessage"></span>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <div class="percentage-calculator hidden">
+        <div class="part part1">
+            <p class="p1">What is
+                <input type="number" placeholder="1" style="margin-top: 0.1em">
+                % of
+                <input type="number" placeholder="10">
+                <div class="equal"> = </div>
+                <div class="right"> 10 </div>
+            </p>
+        </div>
+        <div class="part part2">
+            <p class="p2">What is
+                <input type="number" placeholder="100" style="height: 30px" style="margin-top: 0.1em">
+                -
+                <input type="number" placeholder="75"> 
+                <span>%</span>
+                <div class="equal"> = </div>
+                <div class="right"> 25 </div>
+            </p>
+        </div>
+        <div class="part part3">
+            <p class="p3">What is
+                <input type="number" placeholder="50" style="height: 30px" style="margin-top: 0.1em">
+                +
+                <input type="number" placeholder="80"> 
+                <span>%</span>
+                <div class="equal"> = </div>
+                <div class="right"> 90 </div>
+            </p>
+        </div>
+        <div class="part part4">
+            <p class="p4">
+                <input type="number" placeholder="60" style="height: 30px" style="margin-top: 0.1em">
+                is what percent of
+                <input type="number" placeholder="80"> 
+                <span></span>
+                <div class="equal"> = </div>
+                <div class="right"> 75 </div>
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="speed-conversion hidden">
+    <h2 class="text">Speed Conversion</h2>
+    <div class="button-container">
+        <div class="mph">
+            <button class="btnSpeed">KPH to MPH</button>     
+        </div>
+        <div class="kph">
+            <button class="btnSpeed">MPH to KPH</button>
+        </div>
+    </div>
+</div>
+
+<div class="inputs-mph hidden">
+    <div>
+        <input type="number" value="0" id="input-kph"> <p class="garbage">KPH</p>
+        <label for="mph"></label>
+    </div>
+    <div class="equals">=</div>
+    <div>
+        <input type="number" value="0.000" id="input-mph"> <p class="garbage">MPH</p>
+        <label for="kph"></label>
+    </div>
+</div>
+
+<div class="inputs-kph hidden">
+    <div class="garbage">
+        <input type="number" value="0" id="input-mph-2"> <p>MPH</p>
+        <label for="kph"></label>
+    </div>
+    <div class="equals garbage">=</div>
+    <div class="garbage">
+        <input type="number" value="0.000" id="input-kph-2"> <p>KPH</p>
+        <label for="mph"></label>
+    </div>
+</div>
+
+
+
+    <div class="weight-conversion hidden">
+        <h2 class="text-weight" style="text-align: center;">Weight Conversion</h2>
+        <div class="measurements">
+            <div class="kilograms">
+                <input type="number" id="kg"><p>kg</p>
+            </div>
+            <div class="pounds">
+                <input type="number" id="lb"><p>lb</p>
+            </div>
+            <div class="ounces">
+                <input type="number" id="oz"><p>oz</p>
+            </div>
+            <div class="stones">
+                <input type="number" id="st"><p>st</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="temperature-conversion hidden">
+        <h2 class="text" id="text">Temperature conversion</h2>
+        <div class="button-container">
+            <div class="fahrenheit">
+                <button class="btnTemp">To Celsius</button>
+            </div>
+            <div class="celcius">
+                <button class="btnTemp">To Fahrenheit</button>
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="inputs-celcius hidden">
+            <div>
+                <input type="number" value="0" id="input-celcius"><p>Celcius</p>
+                <label for="celsius"></label>
+            </div>
+            <div class="equals">=</div>
+            <div>
+                <input type="number" value="0.000" id="input-fahrenheit"><p>Fahrenheit</p>
+                <label for="fahrenheit"></label>
+            </div>
+        </div>
+        
+        <div class="inputs-fahrenheit hidden">
+            <div>
+                <input type="number" value="0" id="input-fahrenheit-2"><p>Fahrenheit</p>
+                <label for="fahrenheit"></label>
+            </div>
+            <div class="equals">=</div>
+            <div>
+                <input type="number" value="0.000" id="input-celcius-2"><p>Celcius</p>
+                <label for="celsius"></label>
+            </div>
+        </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
